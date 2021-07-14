@@ -1062,52 +1062,52 @@ private:
 
 };
 
-//int main()
-//{
-//	
-//	
-//
-//	hwnd = initgraph(1600, 768);//50*24
-//
-//	/*loadimage(&imageFloor, _T("floor.png"));
-//	loadimage(&imageCorridor, _T("corridor.png"));
-//	loadimage(&imageWall, _T("wall.png"));
-//	loadimage(&imageClosedDoor,_T("closed_door.png"));
-//	loadimage(&imageOpenDoor, _T("open_door.png"));
-//	loadimage(&imageUpstair, _T("stairs_up.png"));
-//	loadimage(&imageDownstair, _T("stairs_down.png"));
-//	loadimage(&imagePlayer, _T("player.png"));
-//	loadimage(&imageMonster, _T("tiles/monster/alligator.png"));
-//	loadimage(&imageChest, _T("chest.png"));
-//	loadimage(&imageCloud, _T("cloud.png"));*/
-//
-//	loadImage();
-//	BeginBatchDraw();
-//	Dungeon d(45, 24);
-//	d.generate(50);
-//	d.print();
-//	FlushBatchDraw();
-//	while (true)
-//	{
-//		cleardevice();
-//		BeginBatchDraw();
-//		if (_kbhit())
-//		{
-//			keyMsg = _getch();
-//			d.move(keyMsg);
-//			
-//		}
-//		d.print();
-//		FlushBatchDraw();
-//
-//	}
-//	
-//	std::cout << "Press Enter to quit... ";
-//	std::cin.get();
-//	EndBatchDraw();
-//
-//	return 0;
-//}
+int main()
+{
+	
+	
+
+	hwnd = initgraph(1600, 768);//50*24
+
+	/*loadimage(&imageFloor, _T("floor.png"));
+	loadimage(&imageCorridor, _T("corridor.png"));
+	loadimage(&imageWall, _T("wall.png"));
+	loadimage(&imageClosedDoor,_T("closed_door.png"));
+	loadimage(&imageOpenDoor, _T("open_door.png"));
+	loadimage(&imageUpstair, _T("stairs_up.png"));
+	loadimage(&imageDownstair, _T("stairs_down.png"));
+	loadimage(&imagePlayer, _T("player.png"));
+	loadimage(&imageMonster, _T("tiles/monster/alligator.png"));
+	loadimage(&imageChest, _T("chest.png"));
+	loadimage(&imageCloud, _T("cloud.png"));*/
+
+	loadImage();
+	BeginBatchDraw();
+	Dungeon d(45, 24);
+	d.generate(50);
+	d.print();
+	FlushBatchDraw();
+	while (true)
+	{
+		cleardevice();
+		BeginBatchDraw();
+		if (_kbhit())
+		{
+			keyMsg = _getch();
+			d.move(keyMsg);
+			
+		}
+		d.print();
+		FlushBatchDraw();
+
+	}
+	
+	std::cout << "Press Enter to quit... ";
+	std::cin.get();
+	EndBatchDraw();
+
+	return 0;
+}
 
 void loadImage() {
 	
@@ -1172,433 +1172,6 @@ void loadImage() {
 
 inline void Dungeon::print()
 {
-	//	
-	//	for (int y = _player.y-1; y < _player.y+2; ++y)//九宫格 
-	//	{
-	//		for (int x = _player.x-1; x < _player.x+2; ++x)
-	//		{
-	//			if (gettiles(x, y) == Chest)
-	//				putimage(x * 32, y * 32, &imageChest);
-	//			else if (gettiles(x, y) == Road)
-	//				putimage(x * 32, y * 32, &imageFloor);
-	//			else if (gettiles(x, y) == Road)
-	//				putimage(x * 32, y * 32, &imageCorridor);
-	//			else if (gettiles(x, y) == Wall)
-	//				putimage(x * 32, y * 32, &imageWall);
-	//			else if (gettiles(x, y) == ClosedDoor)
-	//				putimage(x * 32, y * 32, &imageClosedDoor);
-	//			else if (gettiles(x, y) == OpenDoor)
-	//				putimage(x * 32, y * 32, &imageOpenDoor);
-	//			else if (gettiles(x, y) == UpStairs)
-	//				putimage(x * 32, y * 32, &imageUpstair);
-	//			else if (gettiles(x, y) == StairsDown)
-	//				putimage(x * 32, y * 32, &imageDownstair);
-	//			else if (gettiles(x, y) == Player)
-	//				putimage(x * 32, y * 32, &imagePlayer);
-	//			else if (gettiles(x, y) == Monster)
-	//				putimage(x * 32, y * 32, &imageMonster);
-	//		}
-
-	//		
-	//	}
-	//	if (gettiles(_player.x - 1, _player.y) != Wall && gettiles(_player.x - 1, _player.y) != ClosedDoor)//West
-	//	{
-	//		if (gettiles(_player.x-2, _player.y) == Road)
-	//			;
-	//		else if (gettiles(_player.x - 2, _player.y) == Road)
-	//			putimage((_player.x - 2) * 32, _player.y * 32, &imageFloor);
-	//		else if (gettiles(_player.x - 2, _player.y) == Road)
-	//			putimage((_player.x - 2) * 32, _player.y * 32, &imageCorridor);
-	//		else if (gettiles(_player.x - 2, _player.y) == Wall)
-	//			putimage((_player.x - 2) * 32, _player.y * 32, &imageWall);
-	//		else if (gettiles(_player.x - 2, _player.y) == ClosedDoor)
-	//			putimage((_player.x - 2) * 32, _player.y * 32, &imageClosedDoor);
-	//		else if (gettiles(_player.x - 2, _player.y) == OpenDoor)
-	//			putimage((_player.x - 2) * 32, _player.y * 32, &imageOpenDoor);
-	//		else if (gettiles(_player.x - 2, _player.y) == UpStairs)
-	//			putimage((_player.x - 2) * 32, _player.y * 32, &imageUpstair);
-	//		else if (gettiles(_player.x - 2, _player.y) == StairsDown)
-	//			putimage((_player.x - 2) * 32, _player.y * 32, &imageDownstair);
-	//		else if (gettiles(_player.x - 2, _player.y) == Player)
-	//			putimage((_player.x - 2) * 32, _player.y * 32, &imagePlayer);
-	//		else if (gettiles(_player.x - 2, _player.y) == Monster)
-	//			putimage((_player.x - 2) * 32, _player.y * 32, &imageMonster);
-	//		else if (gettiles(_player.x - 2, _player.y) == Chest)
-	//			putimage((_player.x - 2) * 32, _player.y * 32, &imageChest);
-
-	//		if (gettiles(_player. x - 2, _player.y) != Wall && gettiles(_player. x - 2, _player.y) != ClosedDoor)
-	//		{
-	//			if (gettiles(_player.x - 3, _player.y) == Road)
-	//				;
-	//			else if (gettiles(_player.x - 3, _player.y) == Road)
-	//				putimage((_player.x - 3) * 32, _player.y * 32, &imageFloor);
-	//			else if (gettiles(_player.x - 3, _player.y) == Road)
-	//				putimage((_player.x - 3) * 32, _player.y * 32, &imageCorridor);
-	//			else if (gettiles(_player.x - 3, _player.y) == Wall)
-	//				putimage((_player.x - 3) * 32, _player.y * 32, &imageWall);
-	//			else if (gettiles(_player.x - 3, _player.y) == ClosedDoor)
-	//				putimage((_player.x - 3) * 32, _player.y * 32, &imageClosedDoor);
-	//			else if (gettiles(_player.x - 3, _player.y) == OpenDoor)
-	//				putimage((_player.x - 3) * 32, _player.y * 32, &imageOpenDoor);
-	//			else if (gettiles(_player.x - 3, _player.y) == UpStairs)
-	//				putimage((_player.x - 3) * 32, _player.y * 32, &imageUpstair);
-	//			else if (gettiles(_player.x - 3, _player.y) == StairsDown)
-	//				putimage((_player.x - 3) * 32, _player.y * 32, &imageDownstair);
-	//			else if (gettiles(_player.x - 3, _player.y) == Player)
-	//				putimage((_player.x - 3) * 32, _player.y * 32, &imagePlayer);
-	//			else if (gettiles(_player.x - 3, _player.y) == Monster)
-	//				putimage((_player.x - 3) * 32, _player.y * 32, &imageMonster);
-	//			else if (gettiles(_player.x - 3, _player.y) == Chest)
-	//				putimage((_player.x - 3) * 32, _player.y * 32, &imageChest);
-	//		}
-	//	}
-
-	//	if (gettiles(_player.x - 1, _player.y - 1) != Wall && gettiles(_player.x - 1, _player.y - 1) != ClosedDoor)//Northwest
-	//	{
-	//		if (gettiles(_player.x - 2, _player.y - 1) == Road)
-	//			;
-	//		else if (gettiles(_player.x - 2, _player.y - 1) == Road)
-	//			putimage((_player.x - 2) * 32, (_player.y - 1) * 32, &imageFloor);
-	//		else if (gettiles(_player.x - 2, _player.y - 1) == Road)
-	//			putimage((_player.x - 2) * 32, (_player.y - 1) * 32, &imageCorridor);
-	//		else if (gettiles(_player.x - 2, _player.y - 1) == Wall)
-	//			putimage((_player.x - 2) * 32, (_player.y - 1) * 32, &imageWall);
-	//		else if (gettiles(_player.x - 2, _player.y - 1) == ClosedDoor)
-	//			putimage((_player.x - 2) * 32, (_player.y - 1) * 32, &imageClosedDoor);
-	//		else if (gettiles(_player.x - 2, _player.y - 1) == OpenDoor)
-	//			putimage((_player.x - 2) * 32, (_player.y - 1) * 32, &imageOpenDoor);
-	//		else if (gettiles(_player.x - 2, _player.y - 1) == UpStairs)
-	//			putimage((_player.x - 2) * 32, (_player.y - 1) * 32, &imageUpstair);
-	//		else if (gettiles(_player.x - 2, _player.y - 1) == StairsDown)
-	//			putimage((_player.x - 2) * 32, (_player.y - 1) * 32, &imageDownstair);
-	//		else if (gettiles(_player.x - 2, _player.y - 1) == Player)
-	//			putimage((_player.x - 2) * 32, (_player.y - 1) * 32, &imagePlayer);
-	//		else if (gettiles(_player.x - 2, _player.y - 1) == Monster)
-	//			putimage((_player.x - 2) * 32, (_player.y - 1) * 32, &imageMonster);
-	//		else if (gettiles(_player.x - 2, _player.y - 1) == Chest)
-	//			putimage((_player.x - 2) * 32, (_player.y - 1) * 32, &imageChest);
-
-	//		if (gettiles(_player.x - 1, _player.y - 2) == Road)
-	//			;
-	//		else if (gettiles(_player.x - 1, _player.y - 2) == Road)
-	//			putimage((_player.x - 1) * 32, (_player.y - 2) * 32, &imageFloor);
-	//		else if (gettiles(_player.x - 1, _player.y - 2) == Road)
-	//			putimage((_player.x - 1) * 32, (_player.y - 2) * 32, &imageCorridor);
-	//		else if (gettiles(_player.x - 1, _player.y - 2) == Wall)
-	//			putimage((_player.x - 1) * 32, (_player.y - 2) * 32, &imageWall);
-	//		else if (gettiles(_player.x - 1, _player.y - 2) == ClosedDoor)
-	//			putimage((_player.x - 1) * 32, (_player.y - 2) * 32, &imageClosedDoor);
-	//		else if (gettiles(_player.x - 1, _player.y - 2) == OpenDoor)
-	//			putimage((_player.x - 1) * 32, (_player.y - 2) * 32, &imageOpenDoor);
-	//		else if (gettiles(_player.x - 1, _player.y - 2) == UpStairs)
-	//			putimage((_player.x - 1) * 32, (_player.y - 2) * 32, &imageUpstair);
-	//		else if (gettiles(_player.x - 1, _player.y - 2) == StairsDown)
-	//			putimage((_player.x - 1) * 32, (_player.y - 2) * 32, &imageDownstair);
-	//		else if (gettiles(_player.x - 1, _player.y - 2) == Player)
-	//			putimage((_player.x - 1) * 32, (_player.y - 2) * 32, &imagePlayer);
-	//		else if (gettiles(_player.x - 1, _player.y - 2) == Monster)
-	//			putimage((_player.x - 1) * 32, (_player.y - 2) * 32, &imageMonster);
-	//		else if (gettiles(_player.x - 1, _player.y - 2) == Chest)
-	//			putimage((_player.x - 1) * 32, (_player.y - 2) * 32, &imageChest);
-	//	}
-	//	if (gettiles(_player.x, _player.y - 1) != Wall && gettiles(_player.x, _player.y - 1) != ClosedDoor)//North
-	//	{
-	//		if (gettiles(_player.x, _player.y - 2) == Road)
-	//			;
-	//		else if (gettiles(_player.x, _player.y - 2) == Road)
-	//			putimage(_player.x * 32, (_player.y - 2) * 32, &imageFloor);
-	//		else if (gettiles(_player.x, _player.y - 2) == Road)
-	//			putimage(_player.x * 32, (_player.y - 2) * 32, &imageCorridor);
-	//		else if (gettiles(_player.x, _player.y - 2) == Wall)
-	//			putimage(_player.x * 32, (_player.y - 2) * 32, &imageWall);
-	//		else if (gettiles(_player.x, _player.y - 2) == ClosedDoor)
-	//			putimage(_player.x * 32, (_player.y - 2) * 32, &imageClosedDoor);
-	//		else if (gettiles(_player.x, _player.y - 2) == OpenDoor)
-	//			putimage(_player.x * 32, (_player.y - 2) * 32, &imageOpenDoor);
-	//		else if (gettiles(_player.x, _player.y - 2) == UpStairs)
-	//			putimage(_player.x * 32, (_player.y - 2) * 32, &imageUpstair);
-	//		else if (gettiles(_player.x, _player.y - 2) == StairsDown)
-	//			putimage(_player.x * 32, (_player.y - 2) * 32, &imageDownstair);
-	//		else if (gettiles(_player.x, _player.y - 2) == Player)
-	//			putimage(_player.x * 32, (_player.y - 2) * 32, &imagePlayer);
-	//		else if (gettiles(_player.x, _player.y - 2) == Monster)
-	//			putimage(_player.x * 32, (_player.y - 2) * 32, &imageMonster);
-	//		else if (gettiles(_player.x, _player.y - 2) == Chest)
-	//			putimage(_player.x * 32, (_player.y - 2) * 32, &imageChest);
-
-	//		if (gettiles(_player.x, _player.y - 2) != Wall && gettiles(_player.x, _player.y - 2) != ClosedDoor)
-	//		{
-	//			if (gettiles(_player.x, _player.y - 3) == Road)
-	//				;
-	//			else if (gettiles(_player.x, _player.y - 3) == Road)
-	//				putimage(_player.x * 32, (_player.y - 3)* 32, &imageFloor);
-	//			else if (gettiles(_player.x, _player.y - 3) == Road)
-	//				putimage(_player.x * 32, (_player.y - 3) * 32, &imageCorridor);
-	//			else if (gettiles(_player.x, _player.y - 3) == Wall)
-	//				putimage(_player.x * 32, (_player.y - 3) * 32, &imageWall);
-	//			else if (gettiles(_player.x, _player.y - 3) == ClosedDoor)
-	//				putimage(_player.x * 32, (_player.y - 3) * 32, &imageClosedDoor);
-	//			else if (gettiles(_player.x, _player.y - 3) == OpenDoor)
-	//				putimage(_player.x * 32, (_player.y - 3) * 32, &imageOpenDoor);
-	//			else if (gettiles(_player.x, _player.y - 3) == UpStairs)
-	//				putimage(_player.x * 32, (_player.y - 3) * 32, &imageUpstair);
-	//			else if (gettiles(_player.x, _player.y - 3) == StairsDown)
-	//				putimage(_player.x * 32, (_player.y - 3) * 32, &imageDownstair);
-	//			else if (gettiles(_player.x, _player.y - 3) == Player)
-	//				putimage(_player.x * 32, (_player.y - 3) * 32, &imagePlayer);
-	//			else if (gettiles(_player.x, _player.y - 3) == Monster)
-	//				putimage(_player.x * 32, (_player.y - 3) * 32, &imageMonster);
-	//			else if (gettiles(_player.x, _player.y - 3) == Chest)
-	//				putimage(_player.x * 32, (_player.y - 3) * 32, &imageChest);
-	//		}
-	//	}
-	//	if (gettiles(_player.x + 1, _player.y - 1) != Wall && gettiles(_player.x + 1, _player.y - 1) != ClosedDoor)//Northeast
-	//	{
-	//		if (gettiles(_player.x + 2, _player.y - 1) == Road)
-	//			;
-	//		else if (gettiles(_player.x + 2, _player.y - 1) == Road)
-	//			putimage((_player.x + 2) * 32, (_player.y - 1) * 32, &imageFloor);
-	//		else if (gettiles(_player.x + 2, _player.y - 1) == Road)
-	//			putimage((_player.x + 2) * 32, (_player.y - 1) * 32, &imageCorridor);
-	//		else if (gettiles(_player.x + 2, _player.y - 1) == Wall)
-	//			putimage((_player.x + 2) * 32, (_player.y - 1) * 32, &imageWall);
-	//		else if (gettiles(_player.x + 2, _player.y - 1) == ClosedDoor)
-	//			putimage((_player.x + 2) * 32, (_player.y - 1) * 32, &imageClosedDoor);
-	//		else if (gettiles(_player.x + 2, _player.y - 1) == OpenDoor)
-	//			putimage((_player.x + 2) * 32, (_player.y - 1) * 32, &imageOpenDoor);
-	//		else if (gettiles(_player.x + 2, _player.y - 1) == UpStairs)
-	//			putimage((_player.x + 2) * 32, (_player.y - 1) * 32, &imageUpstair);
-	//		else if (gettiles(_player.x + 2, _player.y - 1) == StairsDown)
-	//			putimage((_player.x + 2) * 32, (_player.y - 1) * 32, &imageDownstair);
-	//		else if (gettiles(_player.x + 2, _player.y - 1) == Player)
-	//			putimage((_player.x + 2) * 32, (_player.y - 1) * 32, &imagePlayer);
-	//		else if (gettiles(_player.x + 2, _player.y - 1) == Monster)
-	//			putimage((_player.x + 2) * 32, (_player.y - 1) * 32, &imageMonster);
-	//		else if (gettiles(_player.x + 2, _player.y - 1) == Chest)
-	//			putimage((_player.x + 2) * 32, (_player.y - 1) * 32, &imageChest);
-
-	//		if (gettiles(_player.x + 1, _player.y - 2) == Road)
-	//			;
-	//		else if (gettiles(_player.x + 1, _player.y - 2) == Road)
-	//			putimage((_player.x + 1) * 32, (_player.y - 2) * 32, &imageFloor);
-	//		else if (gettiles(_player.x + 1, _player.y - 2) == Road)
-	//			putimage((_player.x + 1) * 32, (_player.y - 2) * 32, &imageCorridor);
-	//		else if (gettiles(_player.x + 1, _player.y - 2) == Wall)
-	//			putimage((_player.x + 1) * 32, (_player.y - 2) * 32, &imageWall);
-	//		else if (gettiles(_player.x + 1, _player.y - 2) == ClosedDoor)
-	//			putimage((_player.x + 1) * 32, (_player.y - 2) * 32, &imageClosedDoor);
-	//		else if (gettiles(_player.x + 1, _player.y - 2) == OpenDoor)
-	//			putimage((_player.x + 1) * 32, (_player.y - 2) * 32, &imageOpenDoor);
-	//		else if (gettiles(_player.x + 1, _player.y - 2) == UpStairs)
-	//			putimage((_player.x + 1) * 32, (_player.y - 2) * 32, &imageUpstair);
-	//		else if (gettiles(_player.x + 1, _player.y - 2) == StairsDown)
-	//			putimage((_player.x + 1) * 32, (_player.y - 2) * 32, &imageDownstair);
-	//		else if (gettiles(_player.x + 1, _player.y - 2) == Player)
-	//			putimage((_player.x + 1) * 32, (_player.y - 2) * 32, &imagePlayer);
-	//		else if (gettiles(_player.x + 1, _player.y - 2) == Monster)
-	//			putimage((_player.x + 1) * 32, (_player.y - 2) * 32, &imageMonster);
-	//		else if (gettiles(_player.x + 1, _player.y - 2) == Chest)
-	//			putimage((_player.x + 1) * 32, (_player.y - 2) * 32, &imageChest);
-	//	}
-	//	if (gettiles(_player.x + 1, _player.y) != Wall && gettiles(_player.x + 1, _player.y) != ClosedDoor)//East
-	//	{
-	//		if (gettiles(_player.x + 2, _player.y) == Road)
-	//			;
-	//		else if (gettiles(_player.x + 2, _player.y) == Road)
-	//			putimage((_player.x + 2) * 32, _player.y * 32, &imageFloor);
-	//		else if (gettiles(_player.x + 2, _player.y) == Road)
-	//			putimage((_player.x + 2) * 32, _player.y * 32, &imageCorridor);
-	//		else if (gettiles(_player.x + 2, _player.y) == Wall)
-	//			putimage((_player.x + 2) * 32, _player.y * 32, &imageWall);
-	//		else if (gettiles(_player.x + 2, _player.y) == ClosedDoor)
-	//			putimage((_player.x + 2) * 32, _player.y * 32, &imageClosedDoor);
-	//		else if (gettiles(_player.x + 2, _player.y) == OpenDoor)
-	//			putimage((_player.x + 2) * 32, _player.y * 32, &imageOpenDoor);
-	//		else if (gettiles(_player.x + 2, _player.y) == UpStairs)
-	//			putimage((_player.x + 2) * 32, _player.y * 32, &imageUpstair);
-	//		else if (gettiles(_player.x + 2, _player.y) == StairsDown)
-	//			putimage((_player.x + 2) * 32, _player.y * 32, &imageDownstair);
-	//		else if (gettiles(_player.x + 2, _player.y) == Player)
-	//			putimage((_player.x + 2) * 32, _player.y * 32, &imagePlayer);
-	//		else if (gettiles(_player.x + 2, _player.y) == Monster)
-	//			putimage((_player.x + 2) * 32, _player.y * 32, &imageMonster);
-	//		else if (gettiles(_player.x + 2, _player.y) == Chest)
-	//			putimage((_player.x + 2) * 32, _player.y * 32, &imageChest);
-
-	//		if (gettiles(_player.x + 2, _player.y) != Wall && gettiles(_player.x + 2, _player.y) != ClosedDoor)
-	//		{
-	//			if (gettiles(_player.x + 3, _player.y) == Road)
-	//				;
-	//			else if (gettiles(_player.x + 3, _player.y) == Road)
-	//				putimage((_player.x + 3) * 32, _player.y * 32, &imageFloor);
-	//			else if (gettiles(_player.x + 3, _player.y) == Road)
-	//				putimage((_player.x + 3) * 32, _player.y * 32, &imageCorridor);
-	//			else if (gettiles(_player.x + 3, _player.y) == Wall)
-	//				putimage((_player.x + 3) * 32, _player.y * 32, &imageWall);
-	//			else if (gettiles(_player.x + 3, _player.y) == ClosedDoor)
-	//				putimage((_player.x + 3) * 32, _player.y * 32, &imageClosedDoor);
-	//			else if (gettiles(_player.x + 3, _player.y) == OpenDoor)
-	//				putimage((_player.x + 3) * 32, _player.y * 32, &imageOpenDoor);
-	//			else if (gettiles(_player.x + 3, _player.y) == UpStairs)
-	//				putimage((_player.x + 3) * 32, _player.y * 32, &imageUpstair);
-	//			else if (gettiles(_player.x + 3, _player.y) == StairsDown)
-	//				putimage((_player.x + 3) * 32, _player.y * 32, &imageDownstair);
-	//			else if (gettiles(_player.x + 3, _player.y) == Player)
-	//				putimage((_player.x + 3) * 32, _player.y * 32, &imagePlayer);
-	//			else if (gettiles(_player.x + 3, _player.y) == Monster)
-	//				putimage((_player.x + 3) * 32, _player.y * 32, &imageMonster);
-	//			else if (gettiles(_player.x + 3, _player.y) == Chest)
-	//				putimage((_player.x + 3) * 32, _player.y * 32, &imageChest);
-	//		}
-	//	}
-	//	if (gettiles(_player.x + 1, _player.y + 1) != Wall && gettiles(_player.x + 1, _player.y + 1) != ClosedDoor)//Southeast
-	//	{
-	//		if (gettiles(_player.x + 2, _player.y + 1) == Road)
-	//			;
-	//		else if (gettiles(_player.x + 2, _player.y + 1) == Road)
-	//			putimage((_player.x + 2) * 32, (_player.y + 1) * 32, &imageFloor);
-	//		else if (gettiles(_player.x + 2, _player.y + 1) == Road)
-	//			putimage((_player.x + 2) * 32, (_player.y + 1) * 32, &imageCorridor);
-	//		else if (gettiles(_player.x + 2, _player.y + 1) == Wall)
-	//			putimage((_player.x + 2) * 32, (_player.y + 1) * 32, &imageWall);
-	//		else if (gettiles(_player.x + 2, _player.y + 1) == ClosedDoor)
-	//			putimage((_player.x + 2) * 32, (_player.y + 1) * 32, &imageClosedDoor);
-	//		else if (gettiles(_player.x + 2, _player.y + 1) == OpenDoor)
-	//			putimage((_player.x + 2) * 32, (_player.y + 1) * 32, &imageOpenDoor);
-	//		else if (gettiles(_player.x + 2, _player.y + 1) == UpStairs)
-	//			putimage((_player.x + 2) * 32, (_player.y + 1) * 32, &imageUpstair);
-	//		else if (gettiles(_player.x + 2, _player.y + 1) == StairsDown)
-	//			putimage((_player.x + 2) * 32, (_player.y + 1) * 32, &imageDownstair);
-	//		else if (gettiles(_player.x + 2, _player.y + 1) == Player)
-	//			putimage((_player.x + 2) * 32, (_player.y + 1) * 32, &imagePlayer);
-	//		else if (gettiles(_player.x + 2, _player.y + 1) == Monster)
-	//			putimage((_player.x + 2) * 32, (_player.y + 1) * 32, &imageMonster);
-	//		else if (gettiles(_player.x + 2, _player.y + 1) == Chest)
-	//			putimage((_player.x + 2) * 32, (_player.y + 1) * 32, &imageChest);
-
-	//		if (gettiles(_player.x + 1, _player.y + 2) == Road)
-	//			;
-	//		else if (gettiles(_player.x + 1, _player.y + 2) == Road)
-	//			putimage((_player.x + 1) * 32, (_player.y + 2) * 32, &imageFloor);
-	//		else if (gettiles(_player.x + 1, _player.y + 2) == Road)
-	//			putimage((_player.x + 1) * 32, (_player.y + 2) * 32, &imageCorridor);
-	//		else if (gettiles(_player.x + 1, _player.y + 2) == Wall)
-	//			putimage((_player.x + 1) * 32, (_player.y + 2) * 32, &imageWall);
-	//		else if (gettiles(_player.x + 1, _player.y + 2) == ClosedDoor)
-	//			putimage((_player.x + 1) * 32, (_player.y + 2) * 32, &imageClosedDoor);
-	//		else if (gettiles(_player.x + 1, _player.y + 2) == OpenDoor)
-	//			putimage((_player.x + 1) * 32, (_player.y + 2) * 32, &imageOpenDoor);
-	//		else if (gettiles(_player.x + 1, _player.y + 2) == UpStairs)
-	//			putimage((_player.x + 1) * 32, (_player.y + 2) * 32, &imageUpstair);
-	//		else if (gettiles(_player.x + 1, _player.y + 2) == StairsDown)
-	//			putimage((_player.x + 1) * 32, (_player.y + 2) * 32, &imageDownstair);
-	//		else if (gettiles(_player.x + 1, _player.y + 2) == Player)
-	//			putimage((_player.x + 1) * 32, (_player.y + 2) * 32, &imagePlayer);
-	//		else if (gettiles(_player.x + 1, _player.y + 2) == Monster)
-	//			putimage((_player.x + 1) * 32, (_player.y + 2) * 32, &imageMonster);
-	//		else if (gettiles(_player.x + 1, _player.y + 2) == Chest)
-	//			putimage((_player.x + 1) * 32, (_player.y + 2) * 32, &imageChest);
-	//	}
-	//	if (gettiles(_player.x, _player.y + 1) != Wall && gettiles(_player.x, _player.y + 1) != ClosedDoor)//South
-	//	{
-	//		if (gettiles(_player.x, _player.y + 2) == Road)
-	//			;
-	//		else if (gettiles(_player.x, _player.y + 2) == Road)
-	//			putimage(_player.x * 32, (_player.y + 2) * 32, &imageFloor);
-	//		else if (gettiles(_player.x, _player.y + 2) == Road)
-	//			putimage(_player.x * 32, (_player.y + 2) * 32, &imageCorridor);
-	//		else if (gettiles(_player.x, _player.y + 2) == Wall)
-	//			putimage(_player.x * 32, (_player.y + 2) * 32, &imageWall);
-	//		else if (gettiles(_player.x, _player.y + 2) == ClosedDoor)
-	//			putimage(_player.x * 32, (_player.y + 2) * 32, &imageClosedDoor);
-	//		else if (gettiles(_player.x, _player.y + 2) == OpenDoor)
-	//			putimage(_player.x * 32, (_player.y + 2) * 32, &imageOpenDoor);
-	//		else if (gettiles(_player.x, _player.y + 2) == UpStairs)
-	//			putimage(_player.x * 32, (_player.y + 2) * 32, &imageUpstair);
-	//		else if (gettiles(_player.x, _player.y + 2) == StairsDown)
-	//			putimage(_player.x * 32, (_player.y + 2) * 32, &imageDownstair);
-	//		else if (gettiles(_player.x, _player.y + 2) == Player)
-	//			putimage(_player.x * 32, (_player.y + 2) * 32, &imagePlayer);
-	//		else if (gettiles(_player.x, _player.y + 2) == Monster)
-	//			putimage(_player.x * 32, (_player.y + 2) * 32, &imageMonster);
-	//		else if (gettiles(_player.x, _player.y + 2) == Chest)
-	//			putimage(_player.x * 32, (_player.y + 2) * 32, &imageChest);
-
-	//		if (gettiles(_player.x, _player.y + 2) != Wall && gettiles(_player.x, _player.y + 2) != ClosedDoor)
-	//		{
-	//			if (gettiles(_player.x, _player.y + 3) == Road)
-	//				;
-	//			else if (gettiles(_player.x, _player.y + 3) == Road)
-	//				putimage(_player.x * 32, (_player.y + 3) * 32, &imageFloor);
-	//			else if (gettiles(_player.x, _player.y + 3) == Road)
-	//				putimage(_player.x * 32, (_player.y + 3) * 32, &imageCorridor);
-	//			else if (gettiles(_player.x, _player.y + 3) == Wall)
-	//				putimage(_player.x * 32, (_player.y + 3) * 32, &imageWall);
-	//			else if (gettiles(_player.x, _player.y + 3) == ClosedDoor)
-	//				putimage(_player.x * 32, (_player.y + 3) * 32, &imageClosedDoor);
-	//			else if (gettiles(_player.x, _player.y + 3) == OpenDoor)
-	//				putimage(_player.x * 32, (_player.y + 3) * 32, &imageOpenDoor);
-	//			else if (gettiles(_player.x, _player.y + 3) == UpStairs)
-	//				putimage(_player.x * 32, (_player.y + 3) * 32, &imageUpstair);
-	//			else if (gettiles(_player.x, _player.y + 3) == StairsDown)
-	//				putimage(_player.x * 32, (_player.y + 3) * 32, &imageDownstair);
-	//			else if (gettiles(_player.x, _player.y + 3) == Player)
-	//				putimage(_player.x * 32, (_player.y + 3) * 32, &imagePlayer);
-	//			else if (gettiles(_player.x, _player.y + 3) == Monster)
-	//				putimage(_player.x * 32, (_player.y + 3) * 32, &imageMonster);
-	//			else if (gettiles(_player.x, _player.y + 3) == Chest)
-	//				putimage(_player.x * 32, (_player.y + 3) * 32, &imageChest);
-	//		}
-	//	}
-	//	if (gettiles(_player.x - 1, _player.y + 1) != Wall && gettiles(_player.x - 1, _player.y + 1) != ClosedDoor)//Southwest
-	//	{
-	//		if (gettiles(_player.x - 2, _player.y + 1) == Road)
-	//			;
-	//		else if (gettiles(_player.x - 2, _player.y + 1) == Road)
-	//			putimage((_player.x - 2) * 32, (_player.y + 1) * 32, &imageFloor);
-	//		else if (gettiles(_player.x - 2, _player.y + 1) == Road)
-	//			putimage((_player.x - 2) * 32, (_player.y + 1) * 32, &imageCorridor);
-	//		else if (gettiles(_player.x - 2, _player.y + 1) == Wall)
-	//			putimage((_player.x - 2) * 32, (_player.y + 1) * 32, &imageWall);
-	//		else if (gettiles(_player.x - 2, _player.y + 1) == ClosedDoor)
-	//			putimage((_player.x - 2) * 32, (_player.y + 1) * 32, &imageClosedDoor);
-	//		else if (gettiles(_player.x - 2, _player.y + 1) == OpenDoor)
-	//			putimage((_player.x - 2) * 32, (_player.y + 1) * 32, &imageOpenDoor);
-	//		else if (gettiles(_player.x - 2, _player.y + 1) == UpStairs)
-	//			putimage((_player.x - 2) * 32, (_player.y + 1) * 32, &imageUpstair);
-	//		else if (gettiles(_player.x - 2, _player.y + 1) == StairsDown)
-	//			putimage((_player.x - 2) * 32, (_player.y + 1) * 32, &imageDownstair);
-	//		else if (gettiles(_player.x - 2, _player.y + 1) == Player)
-	//			putimage((_player.x - 2) * 32, (_player.y + 1) * 32, &imagePlayer);
-	//		else if (gettiles(_player.x - 2, _player.y + 1) == Monster)
-	//			putimage((_player.x - 2) * 32, (_player.y + 1) * 32, &imageMonster);
-	//		else if (gettiles(_player.x - 2, _player.y + 1) == Chest)
-	//			putimage((_player.x - 2) * 32, (_player.y + 1) * 32, &imageChest);
-
-	//		if (gettiles(_player.x - 1, _player.y + 2) == Road)
-	//			;
-	//		else if (gettiles(_player.x - 1, _player.y + 2) == Road)
-	//			putimage((_player.x - 1) * 32, (_player.y + 2) * 32, &imageFloor);
-	//		else if (gettiles(_player.x - 1, _player.y + 2) == Road)
-	//			putimage((_player.x - 1) * 32, (_player.y + 2) * 32, &imageCorridor);
-	//		else if (gettiles(_player.x - 1, _player.y + 2) == Wall)
-	//			putimage((_player.x - 1) * 32, (_player.y + 2) * 32, &imageWall);
-	//		else if (gettiles(_player.x - 1, _player.y + 2) == ClosedDoor)
-	//			putimage((_player.x - 1) * 32, (_player.y + 2) * 32, &imageClosedDoor);
-	//		else if (gettiles(_player.x - 1, _player.y + 2) == OpenDoor)
-	//			putimage((_player.x - 1) * 32, (_player.y + 2) * 32, &imageOpenDoor);
-	//		else if (gettiles(_player.x - 1, _player.y + 2) == UpStairs)
-	//			putimage((_player.x - 1) * 32, (_player.y + 2) * 32, &imageUpstair);
-	//		else if (gettiles(_player.x - 1, _player.y + 2) == StairsDown)
-	//			putimage((_player.x - 1) * 32, (_player.y + 2) * 32, &imageDownstair);
-	//		else if (gettiles(_player.x - 1, _player.y + 2) == Player)
-	//			putimage((_player.x - 1) * 32, (_player.y + 2) * 32, &imagePlayer);
-	//		else if (gettiles(_player.x - 1, _player.y + 2) == Monster)
-	//			putimage((_player.x - 1) * 32, (_player.y + 2) * 32, &imageMonster);
-	//		else if (gettiles(_player.x - 1, _player.y + 2) == Chest)
-	//			putimage((_player.x - 1) * 32, (_player.y + 2) * 32, &imageChest);
-	//	}
-
 	//演示用
 
 	for (int y = 0; y < height; ++y)//九宫格 
